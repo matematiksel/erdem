@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erdem BİLO | Özel Matematik Dersleri</title>
+    <meta name="description" content="Erdem BİLO ile LGS, YKS ve okul derslerine yönelik kişiye özel online matematik dersleri. Başarıya giden yolda yanınızdayım!">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- Siyah Beyaz Renk Paleti ve Genel Stil Ayarları (Örnekten Alındı) --- */
+        :root {
+            --primary: #000000; /* Ana Renk: Siyah */
+            --secondary: #ffffff; /* İkincil Renk: Beyaz */
+            --accent: #555555; /* Vurgu Rengi: Koyu Gri */
+            --light-gray: #f4f4f4; /* Açık Gri (Arkaplan vb.) */
+            --mid-gray: #cccccc; /* Orta Gri (Kenarlıklar vb.) */
+            --dark-gray: #333333; /* Koyu Gri (Metinler vb.) */
+            --text-dark: #1a1a1a; /* Ana Metin Rengi (Siyaha Yakın) */
+            --text-light: #666666; /* İkincil Metin Rengi */
+            --transition: all 0.4s ease;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Daha hafif gölge */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--secondary); /* Ana arkaplan beyaz */
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--primary); /* Başlıklar siyah */
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+         a:hover {
+            color: var(--accent); /* Link üzerine gelince vurgu rengi */
+         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Resim altındaki boşluğu kaldır */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px; /* Biraz daha geniş container */
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* --- Buton Stilleri (Siyah Beyaz) --- */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px; /* Biraz daha kompakt buton */
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--primary); /* Kenarlık kalınlığı */
+            font-weight: 600; /* Daha belirgin font */
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 14px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--secondary);
+        }
+
+         /* WhatsApp butonu için özel stil */
+        .btn-whatsapp {
+            background-color: #25D366;
+            border-color: #25D366;
+            color: var(--secondary);
+        }
+        .btn-whatsapp:hover {
+            background-color: transparent;
+            border-color: #25D366;
+            color: #25D366;
+        }
+        .btn-whatsapp i { margin-right: 8px; }
+
+
+        /* --- Bölüm Stilleri --- */
+        .section {
+            padding: 100px 0;
+            position: relative;
+            border-bottom: 1px solid var(--light-gray); /* Bölümler arasına hafif çizgi */
+        }
+        .section:last-of-type {
+             border-bottom: none;
+        }
+        .section.bg-light {
+            background-color: var(--light-gray); /* Açık gri arkaplanlı bölüm */
+        }
+
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem; /* Biraz daha küçük başlık */
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px; /* Daha kısa çizgi */
+            height: 3px; /* Daha kalın çizgi */
+            background-color: var(--primary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 10px auto 0;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* --- Header (Siyah Beyaz) --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--secondary);
+            padding: 15px 0;
+            transition: var(--transition);
+            border-bottom: 1px solid transparent;
+        }
+
+        .header.scrolled {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--mid-gray); /* Scroll'da belirginleşen çizgi */
+            box-shadow: var(--shadow);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+         /* Logo resmi kullanmak isterseniz aşağıdaki yorum satırını açın */
+        /*
+        .logo img {
+            height: 60px;
+            filter: grayscale(100%);
+        }
+        */
+
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 35px; /* Menü aralığı */
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            font-size: 14px; /* Menü font boyutu */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 5px 0;
+            color: var(--primary);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            left: 50%; /* Ortadan başla */
+            transform: translateX(-50%); /* Ortala */
+            bottom: -2px; /* Biraz aşağıda */
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after,
+        .nav-menu li.active a:after { /* Aktif menü öğesi için */
+            width: 100%;
+        }
+
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* --- Hero Bölümü (Matematik Dersi İçin Uyarlandı) --- */
+        .hero {
+            min-height: 90vh; /* Ekran yüksekliğinin %90'ı */
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-color: var(--secondary);
+            text-align: center; /* Metin ortalı */
+            padding-top: 120px; /* Header için boşluk */
+            border-bottom: none; /* Hero bölümü altında çizgi olmasın */
+        }
+
+        .hero-content {
+            max-width: 800px; /* İçerik genişliği */
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.8rem; /* Ana başlık boyutu */
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--primary);
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .hero-image-circle {
+            width: 200px; /* Yuvarlak resim boyutu */
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 40px; /* Ortala ve altına boşluk */
+            border: 5px solid var(--primary); /* Çerçeve */
+            box-shadow: var(--shadow);
+        }
+         .hero-image-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Siyah beyaz tema için: Renkli profil resmini gri tonlamalı yapar. */
+            /* Eğer resminiz zaten siyah beyaz ise veya renkli kalmasını istiyorsanız bu satırı silin/yorumlayın */
+            /* filter: grayscale(100%); */
+         }
+
+        /* --- Hakkımda Bölümü (Matematik Öğretmeni İçin Uyarlandı) --- */
+        .about {
+            background-color: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr; /* Tek sütun */
+            gap: 40px;
+            align-items: center;
+            text-align: center; /* Metin ortalı */
+            max-width: 900px; /* İçerik genişliği */
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* --- Hizmet Alanları Bölümü (Matematik Dersleri İçin) --- */
+        .services {
+             background-color: var(--secondary);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esnek grid */
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--secondary);
+            padding: 35px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid var(--mid-gray); /* İnce kenarlık */
+            position: relative;
+            display: flex; /* İçeriği dikeyde hizalamak için */
+            flex-direction: column; /* Öğeleri alt alta sırala */
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 36px; /* İkon boyutu */
+            color: var(--primary);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .service-title {
+            font-size: 1.4rem; /* Kart başlığı */
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .service-text {
+            color: var(--text-light);
+            font-size: 0.95rem; /* Kart metni */
+            margin-bottom: 25px;
+            flex-grow: 1; /* Metnin kalan alanı doldurmasını sağla */
+        }
+
+        /* Liste stili */
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: left; /* Liste sola hizalı */
+            margin-top: 15px;
+        }
+         .service-card ul li {
+             margin-bottom: 8px;
+             position: relative;
+             padding-left: 20px;
+         }
+         .service-card ul li::before {
+             content: '\f518'; /* FontAwesome calculator icon */
+             font-family: 'Font Awesome 6 Free';
+             font-weight: 900;
+             position: absolute;
+             left: 0;
+             top: 2px;
+             color: var(--primary);
+         }
+
+
+        /* --- Yaklaşımım Bölümü (Matematik Öğretimi İçin) --- */
+        .approach {
+            background-color: var(--light-gray);
+        }
+        .approach-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+         .approach-content p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            font-size: 1.1rem;
+         }
+
+         .approach-points {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+             gap: 30px;
+             margin-top: 40px;
+             text-align: left;
+         }
+         .approach-point {
+             background: var(--secondary);
+             padding: 25px;
+             border: 1px solid var(--mid-gray);
+             display: flex;
+             flex-direction: column;
+         }
+          .approach-point i { /* İkon için stil */
+             font-size: 24px;
+             color: var(--primary);
+             margin-bottom: 15px;
+             text-align: center;
+         }
+         .approach-point h4 {
+             font-size: 1.2rem;
+             margin-bottom: 10px;
+             color: var(--primary);
+             font-weight: 500;
+             text-align: center;
+         }
+          .approach-point p {
+              font-size: 0.95rem;
+              margin-bottom: 0;
+              color: var(--text-light);
+              text-align: center;
+              flex-grow: 1;
+          }
+
+        /* --- Neden Erdem BİLO? Bölümü (Testimonials yerine) --- */
+        .why-choose {
+            background-color: var(--secondary);
+        }
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .why-choose-item {
+            background: var(--light-gray);
+            padding: 30px;
+            text-align: center;
+            border: 1px solid var(--mid-gray);
+            transition: var(--transition);
+        }
+        .why-choose-item:hover {
+             transform: translateY(-5px);
+             box-shadow: var(--shadow);
+             border-color: var(--primary);
+        }
+         .why-choose-icon {
+             font-size: 30px;
+             color: var(--primary);
+             margin-bottom: 20px;
+         }
+         .why-choose-item h4 {
+             font-size: 1.3rem;
+             margin-bottom: 15px;
+             font-weight: 500;
+         }
+         .why-choose-item p {
+             font-size: 0.95rem;
+             color: var(--text-light);
+             margin-bottom: 0;
+         }
+
+        /* --- İletişim Bölümü (Güncellendi) --- */
+        .contact {
+             background-color: var(--light-gray); /* Arka plan açık gri */
+        }
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+         .contact-info {
+             margin-top: 40px;
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* İki sütunlu yapı */
+             gap: 30px;
+             text-align: center; /* Ortala */
+             background: var(--secondary); /* İçerik kutusu beyaz */
+             padding: 40px;
+             border: 1px solid var(--mid-gray);
+         }
+         .contact-item {
+             /* display: flex; */ /* Flex kaldırıldı, ikon üstte metin altta */
+             align-items: center; /* Ortala */
+             margin-bottom: 20px;
+         }
+         .contact-icon {
+             font-size: 30px; /* İkon büyütüldü */
+             color: var(--primary);
+             margin: 0 auto 15px; /* Ortala ve altına boşluk */
+             width: 50px; /* İkon alanı */
+             line-height: 50px;
+             height: 50px;
+             /* background: var(--light-gray); */ /* Arkaplan kaldırıldı */
+             /* border-radius: 50%; */ /* Yuvarlaklık kaldırıldı */
+             text-align: center;
+         }
+          .contact-text h4 {
+             font-size: 1.2rem; /* Başlık büyütüldü */
+             margin-bottom: 10px;
+             font-weight: 500;
+          }
+          .contact-text p, .contact-text a {
+             color: var(--text-light);
+             font-size: 1.1rem; /* Metin büyütüldü */
+             word-break: break-word; /* Uzun numaralar kırılsın */
+          }
+          .contact-text a:hover {
+              color: var(--primary);
+              text-decoration: underline;
+          }
+         /* İletişim bölümü altındaki butonlar */
+         .contact-buttons {
+             margin-top: 40px;
+         }
+         .contact-buttons .btn {
+             margin: 10px;
+         }
+
+        /* --- Footer (Güncellendi) --- */
+        .footer {
+            background-color: var(--primary);
+            color: rgba(255, 255, 255, 0.7); /* Açık beyaz metin */
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+        /* Footer Logo (Metin veya Resim) */
+        .footer-logo .logo-text { /* Metin logo için stil */
+             font-family: 'Playfair Display', serif;
+             font-size: 1.5rem;
+             font-weight: 600;
+             color: var(--secondary); /* Beyaz metin */
+             margin-bottom: 15px;
+             display: inline-block;
+        }
+        /*
+        .footer-logo img {
+            height: 60px;
+            filter: brightness(0) invert(1); // Logoyu beyaz yap (siyah arkaplan için)
+            margin-bottom: 15px;
+        }
+        */
+
+        .footer-about p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 500;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent); /* Alt çizgi */
+            display: inline-block;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-contact li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 4px; /* İkonu hizala */
+        }
+
+         .footer-contact a {
+             color: rgba(255, 255, 255, 0.7); /* Footer link rengi */
+         }
+          .footer-contact a:hover {
+             color: var(--secondary); /* Hover rengi */
+         }
+
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--accent);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* --- Geri Dön Butonu --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background-color: var(--primary);
+            color: var(--secondary);
+            display: flex; /* İçeriği ortalamak için */
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            border-radius: 4px; /* Hafif köşeli */
+        }
+
+        .back-to-top.active {
+            opacity: 0.8; /* Biraz transparan */
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            background-color: var(--dark-gray);
+        }
+
+        /* --- Responsive Ayarlar (Örnekten Alındı) --- */
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%; /* Başlangıçta gizli */
+                width: 300px;
+                height: 100vh;
+                background-color: var(--secondary);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px; /* Yukarıdan boşluk */
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s ease; /* Sadece sağa kayma animasyonu */
+                z-index: 1001;
+                border-left: 1px solid var(--mid-gray);
+                overflow-y: auto; /* Menü taşarsa scroll ekle */
+            }
+
+            .nav-menu.active {
+                right: 0; /* Aktif olunca görünür */
+            }
+
+            .nav-menu li {
+                margin: 0 0 25px 0; /* Mobil menü aralığı */
+                width: 100%; /* Tam genişlik */
+            }
+
+            .nav-menu a {
+                 font-size: 15px;
+            }
+
+            .mobile-toggle {
+                display: block;
+                z-index: 1002; /* Menü kapatma butonunun üstünde */
+                position: relative; /* Kapatma butonu için */
+            }
+
+            .close-menu {
+                 position: absolute;
+                 top: 20px;
+                 right: 20px;
+                 background: none;
+                 border: none;
+                 font-size: 24px;
+                 cursor: pointer;
+                 color: var(--primary);
+                 display: block; /* Her zaman göster */
+                 z-index: 1003; /* Mobil toggle'ın üzerinde */
+            }
+             /* Mobil menü açıkken mobil toggle'ı gizle (opsiyonel) */
+            /*
+             .nav-menu.active ~ .mobile-toggle {
+                 opacity: 0;
+             }
+            */
+        }
+
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+            .section { padding: 80px 0; }
+            .hero-content h1 { font-size: 3rem; }
+            .section-title h2 { font-size: 2.5rem; }
+            .services-grid { grid-template-columns: 1fr; } /* Tek sütun */
+            .approach-points { grid-template-columns: 1fr; } /* Tek sütun */
+            .why-choose-grid { grid-template-columns: 1fr; } /* Tek sütun */
+            .footer-content { grid-template-columns: 1fr; } /* Tek sütun */
+            .contact-info { grid-template-columns: 1fr; padding: 30px; } /* Tek sütun ve daha az padding */
+        }
+
+        @media (max-width: 576px) {
+            html { font-size: 14px; }
+            .section { padding: 60px 0; }
+            .hero-content h1 { font-size: 2.5rem; }
+             .hero-content .subtitle { font-size: 1.1rem; }
+            .hero-image-circle { width: 150px; height: 150px; }
+            .section-title h2 { font-size: 2.2rem; }
+            .btn { padding: 10px 25px; font-size: 13px; }
+            .contact-info { padding: 20px; }
+            .contact-buttons .btn { display: block; width: 90%; margin: 10px auto; } /* Butonları alt alta */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#home" class="logo">
+                    <span class="logo-text">Erdem BİLO | Matematik</span>
+                </a>
+
+                <button class="mobile-toggle" aria-label="Menüyü Aç">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <nav class="nav-menu" aria-label="Ana Navigasyon">
+                     <button class="close-menu" aria-label="Menüyü Kapat"><i class="fas fa-times"></i></button>
+                     <ul>
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#about">Hakkımda</a></li>
+                        <li><a href="#services">Hizmetler</a></li>
+                        <li><a href="#approach">Yaklaşımım</a></li>
+                        <li><a href="#why-choose">Neden Ben?</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                     </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image-circle">
+                        <img src="resim1.png" alt="Erdem BİLO - Matematik Öğretmeni">
+                    </div>
+                    <h1>Erdem BİLO</h1>
+                    <p class="subtitle">LGS, YKS ve Okul Derslerine Yönelik Kişiye Özel Online Matematik Dersi</p>
+                    <a href="#contact" class="btn">İletişime Geçin</a>
+                    <a href="#services" class="btn btn-outline" style="margin-left: 15px;">Hizmetlerim</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Hakkımda</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                         <h3>Matematiği Anlaşılır Kılan Yol Arkadaşınız</h3>
+                        <p>Merhaba! Ben Erdem BİLO. Matematik öğrenme yolculuğunuzda size rehberlik etmek için buradayım. Yıllardır farklı seviyelerdeki öğrencilere matematik dersleri vererek, bu dersin korkutucu değil, aksine mantıksal düşünme becerisini geliştiren keyifli bir alan olduğunu göstermeyi hedefledim.</p>
+                        <p>Her öğrencinin öğrenme stilinin ve hızının farklı olduğunun bilinciyle, derslerimi tamamen kişiye özel olarak planlıyorum. Amacım sadece formülleri ezberletmek değil, matematiğin temel mantığını kavratarak kalıcı öğrenmeyi sağlamak ve öğrencilerimin sınavlarda ve okul hayatlarında başarılı olmalarına yardımcı olmaktır.</p>
+                        <p>Sabır, anlayış ve modern öğretim teknikleriyle matematiği sizin için de ulaşılabilir kılmak için sabırsızlanıyorum. Gelin, birlikte başaralım!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Hizmetler ve Ders İçerikleri</h2>
+                    <p>İhtiyaçlarınıza özel olarak tasarlanmış birebir online matematik dersleri.</p>
+                </div>
+                <div class="services-grid">
+                     <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3 class="service-title">LGS Hazırlık</h3>
+                        <p class="service-text">Liselere Geçiş Sınavı'na (LGS) yönelik güncel müfredata uygun, yeni nesil soru odaklı matematik dersleri.</p>
+                        <ul>
+                            <li>Konu Anlatımları ve Tekrarları</li>
+                            <li>Yeni Nesil Soru Çözüm Teknikleri</li>
+                            <li>Deneme Sınavı Analizleri</li>
+                            <li>Eksik Konu Tespiti ve Telafisi</li>
+                            <li>Zaman Yönetimi Stratejileri</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-university"></i></div>
+                        <h3 class="service-title">YKS (TYT-AYT) Hazırlık</h3>
+                        <p class="service-text">Üniversite sınavlarına (TYT ve AYT) yönelik kapsamlı matematik ve geometri dersleri.</p>
+                         <ul>
+                            <li>Temel Matematik (TYT) Konuları</li>
+                            <li>İleri Matematik (AYT) Konuları</li>
+                            <li>Geometri (TYT-AYT)</li>
+                            <li>Sınav Stratejileri ve Taktikler</li>
+                            <li>Çıkmış Soru Analizleri</li>
+                            <li>Periyodik Deneme Sınavları</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-book-open-reader"></i></div>
+                        <h3 class="service-title">Okul Derslerine Destek</h3>
+                        <p class="service-text">Ortaokul ve lise öğrencileri için okul müfredatına paralel, başarıyı artırmaya yönelik destek dersleri.</p>
+                        <ul>
+                            <li>Konu Anlama ve Pekiştirme</li>
+                            <li>Ödevlere Yardımcı</li>
+                            <li>Yazılı Sınavlara Hazırlık</li>
+                            <li>Temel Eksikliklerin Giderilmesi</li>
+                            <li>Matematik Sevgisi Kazandırma</li>
+                        </ul>
+                    </div>
+                     <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="service-title">Online Ders Avantajı</h3>
+                        <p class="service-text">Konumdan bağımsız, evinizin konforunda interaktif ve verimli özel ders imkanı.</p>
+                         <ul>
+                            <li>Esnek Ders Saatleri</li>
+                            <li>Kayıtlı Ders Tekrar İzleme (Opsiyonel)</li>
+                            <li>Dijital Materyal Paylaşımı</li>
+                            <li>İnteraktif Beyaz Tahta Kullanımı</li>
+                            <li>Zaman ve Mekan Tasarrufu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="approach" class="approach section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Öğretim Yaklaşımım</h2>
+                    <p>Başarıya giden yolda benimsediğim temel prensipler.</p>
+                </div>
+                <div class="approach-content">
+                    <p>Matematik öğrenmek, ezberlemekten çok daha fazlasıdır. Bu bir keşif ve problem çözme sürecidir. Derslerimde, öğrencilerimin bu süreci en verimli şekilde deneyimlemelerini sağlamayı amaçlıyorum.</p>
+
+                    <div class="approach-points">
+                        <div class="approach-point">
+                             <i class="fas fa-user-graduate"></i>
+                            <h4>Kişiye Özel Planlama</h4>
+                            <p>Her öğrencinin güçlü ve zayıf yönlerini analiz ederek, tamamen ona özel bir ders programı ve öğrenme stratejisi oluşturuyorum.</p>
+                        </div>
+                         <div class="approach-point">
+                             <i class="fas fa-lightbulb"></i>
+                            <h4>Kavramsal Anlama</h4>
+                            <p>Formüllerin ve kuralların arkasındaki mantığı anlamaya odaklanıyoruz. "Neden?" sorusunu sorarak kalıcı öğrenmeyi sağlıyoruz.</p>
+                        </div>
+                        <div class="approach-point">
+                             <i class="fas fa-pencil-ruler"></i>
+                            <h4>Bol Pratik ve Uygulama</h4>
+                            <p>Öğrenilen konuları farklı soru tipleriyle pekiştiriyor, düzenli alıştırmalarla bilgiyi kalıcı hale getiriyoruz.</p>
+                        </div>
+                         <div class="approach-point">
+                             <i class="fas fa-chalkboard-teacher"></i>
+                             <h4>Anlaşılır ve Sabırlı Anlatım</h4>
+                             <p>En karmaşık konuları bile basit adımlara indirgeyerek, herkesin anlayabileceği bir dille ve sabırla anlatıyorum.</p>
+                        </div>
+                         <div class="approach-point">
+                            <i class="fas fa-laptop"></i>
+                            <h4>Teknoloji Destekli Eğitim</h4>
+                            <p>Online derslerde interaktif araçlar, dijital kaynaklar ve görsel materyaller kullanarak öğrenmeyi daha ilgi çekici hale getiriyorum.</p>
+                        </div>
+                         <div class="approach-point">
+                            <i class="fas fa-comments"></i>
+                            <h4>Motivasyon ve Geri Bildirim</h4>
+                            <p>Öğrencinin özgüvenini artırmak, motivasyonunu yüksek tutmak ve düzenli geri bildirimlerle gelişimini takip etmek önceliğimdir.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="why-choose" class="why-choose section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Neden Erdem BİLO ile Çalışmalısınız?</h2>
+                    <p>Size özel matematik derslerinde fark yaratan avantajlar.</p>
+                </div>
+                <div class="why-choose-grid">
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-star"></i></div>
+                        <h4>Deneyim ve Uzmanlık</h4>
+                        <p>Yılların getirdiği tecrübe ile LGS, YKS ve okul müfredatına hakim, kanıtlanmış öğretim yöntemleri.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-users"></i></div>
+                        <h4>Birebir İlgi</h4>
+                        <p>Tamamen size odaklı dersler sayesinde eksikleriniz hızla kapanır, potansiyeliniz en üst düzeye çıkar.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Gözle Görülür Sonuçlar</h4>
+                        <p>Kısa sürede netlerinizde ve notlarınızda artış, matematikte başarı ve özgüven kazanımı.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-clock"></i></div>
+                        <h4>Esnek Ders Programı</h4>
+                        <p>Yoğun programınıza uyum sağlayan, sizin için en uygun gün ve saatlerde online ders planlaması.</p>
+                    </div>
+                    <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-laptop-house"></i></div>
+                        <h4>Online Ders Kolaylığı</h4>
+                        <p>Yolda vakit kaybetmeden, interaktif ve verimli bir şekilde evinizin rahatlığında ders alma imkanı.</p>
+                    </div>
+                     <div class="why-choose-item">
+                        <div class="why-choose-icon"><i class="fas fa-check-circle"></i></div>
+                        <h4>Anlaşılır ve Etkili Yöntemler</h4>
+                        <p>Karmaşık konuları basitleştiren, akılda kalıcı ve sınavlarda başarı getiren öğretim teknikleri.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact section bg-light">
+            <div class="container">
+                <div class="section-title">
+                    <h2>İletişime Geçin</h2>
+                    <p>Dersler hakkında bilgi almak, kayıt olmak veya sorularınızı sormak için benimle kolayca iletişime geçebilirsiniz.</p>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                         <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div class="contact-text">
+                                <h4>Telefon</h4>
+                                <a href="tel:+905354270458">+90 535 427 04 58</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <a href="https://wa.me/905354270458" target="_blank">+90 535 427 04 58</a><br>
+                                <a href="https://wa.me/905354270458" target="_blank" style="font-size: 0.9em; text-decoration: underline;">(Mesaj göndermek için tıklayın)</a>
+                            </div>
+                        </div>
+                        </div>
+                    <div class="contact-buttons">
+                         <a href="tel:+905354270458" class="btn"><i class="fas fa-phone-alt"></i> Hemen Ara</a>
+                         <a href="https://wa.me/905354270458" target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+                     </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">Erdem BİLO | Matematik</span>
+                         </div>
+                    <p>LGS, YKS ve okul derslerine yönelik kişiye özel online matematik dersleri ile başarıya ulaşın.</p>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-heading">Hızlı Bağlantılar</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Ana Sayfa</a></li>
+                        <li><a href="#about">Hakkımda</a></li>
+                        <li><a href="#services">Hizmetler</a></li>
+                        <li><a href="#approach">Yaklaşımım</a></li>
+                        <li><a href="#why-choose">Neden Ben?</a></li>
+                        <li><a href="#contact">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact-container">
+                    <h3 class="footer-heading">İletişim</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <a href="tel:+905354270458">+90 535 427 04 58</a>
+                        </li>
+                         <li>
+                            <i class="fab fa-whatsapp"></i>
+                             <a href="https://wa.me/905354270458" target="_blank">WhatsApp'tan Ulaşın</a>
+                        </li>
+                         <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Online Dersler</span> </li>
+                        </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                 <p>&copy; <script>document.write(new Date().getFullYear())</script> Erdem BİLO. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" title="Yukarı Çık" aria-label="Sayfa Başına Dön">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // --- Mobil Menü ---
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const closeMenu = document.querySelector('.close-menu');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu a'); // Menü linkleri
+
+        if (mobileToggle && navMenu && closeMenu) {
+            mobileToggle.addEventListener('click', () => {
+                navMenu.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Arka planın kaymasını engelle
+            });
+
+            closeMenu.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                 document.body.style.overflow = ''; // Kaydırmayı tekrar etkinleştir
+            });
+
+            // Linke tıklayınca menüyü kapat
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = ''; // Kaydırmayı tekrar etkinleştir
+                });
+            });
+
+            // Menü dışına tıklayınca kapat (Opsiyonel)
+            document.addEventListener('click', (event) => {
+                const isClickInsideNav = navMenu.contains(event.target);
+                const isClickOnToggle = mobileToggle.contains(event.target);
+                if (!isClickInsideNav && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        // --- Header Scroll Efekti ---
+        const header = document.querySelector('.header');
+        let lastScrollTop = 0; // Son scroll pozisyonunu takip et
+
+        if(header){
+            window.addEventListener('scroll', () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 80) { // 80px scroll sonrası
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                // Scroll aşağı ise header'ı gizle, yukarı ise göster (opsiyonel)
+                /*
+                if (scrollTop > lastScrollTop && scrollTop > header.offsetHeight){
+                    // Scroll Down
+                     header.style.top = `-${header.offsetHeight}px`;
+                } else {
+                    // Scroll Up
+                    header.style.top = "0";
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+                */
+            }, false);
+        }
+
+
+        // --- Başa Dön Butonu ---
+        const backToTopBtn = document.getElementById('backToTop');
+        if(backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) { // 400px scroll sonrası göster
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // --- Smooth Scroll (Header Yüksekliğini Hesaplayarak) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Sadece sayfa içi linkler için (# ile başlayan ve # dışında karakter içeren)
+                if (href && href.startsWith('#') && href.length > 1) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        const headerOffset = header ? header.offsetHeight : 70; // Header varsa yüksekliğini al, yoksa 70px varsay
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Tıklanan linkin menüdeki ebeveynine 'active' sınıfı ekle (diğerlerinden kaldır)
+                        navLinks.forEach(link => link.parentElement.classList.remove('active'));
+                        // Eğer tıklanan link menü içinde ise (li'nin çocuğu ise)
+                        if(this.parentElement.tagName === 'LI'){
+                             this.parentElement.classList.add('active');
+                        }
+                    }
+                }
+            });
+        });
+
+         // --- Scroll'da Aktif Bölümü Menüde İşaretle (Opsiyonel) ---
+        const sections = document.querySelectorAll('section[id]'); // Sadece id'si olan section'ları al
+        const menuLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+        function changeActiveLink() {
+            let index = sections.length;
+            const headerOffset = header ? header.offsetHeight + 10 : 80; // Header'ın biraz altını hedefle
+
+            while(--index && window.scrollY + headerOffset < sections[index].offsetTop) {}
+
+            menuLinks.forEach((link) => link.parentElement.classList.remove('active'));
+
+            // Eşleşen linki bul ve aktif yap
+            const activeLink = document.querySelector(`.nav-menu a[href="#${sections[index] ? sections[index].id : ''}"]`);
+            if(activeLink) {
+                 activeLink.parentElement.classList.add('active');
+            }
+        }
+
+        // Sayfa yüklendiğinde ve scroll edildiğinde çalıştır
+        window.addEventListener('load', changeActiveLink);
+        window.addEventListener('scroll', changeActiveLink);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Erdem BİLO ile kişiye özel online ve yüz yüze matematik dersleri. Başarınızı garantileyin!">
+    <title>Erdem BİLO - Özel Matematik Dersleri</title>
+    <style>
+        /* Genel Stil Ayarları */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+
+        /* Header ve Ana Başlık */
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 120px;
+            border-bottom: #0779e4 5px solid;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            padding-bottom: 10px;
+        }
+         header p {
+            font-size: 1.2em;
+            margin-top: 0;
+        }
+
+        /* Tanıtım Alanı (Hero) */
+        .hero {
+            background: #eef;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .hero img {
+            max-width: 200px; /* Resim boyutunu ayarlayabilirsiniz */
+            height: auto;
+            border-radius: 50%; /* Resmi yuvarlak yapar */
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .hero h2 {
+            color: #0779e4;
+            margin-bottom: 15px;
+        }
+
+        /* Bölümler */
+        section {
+            padding: 30px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #35424a;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+         /* Neden Erdem BİLO? Kutuları */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Yan yana kutular */
+            gap: 20px; /* Kutular arası boşluk */
+            text-align: center;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .feature-box h3 {
+            color: #0779e4;
+            margin-top: 0;
+        }
+
+        /* İletişim ve Buton */
+        .contact {
+            background: #35424a;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .contact h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #0779e4;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+            border: none; /* Buton kenarlığı */
+            cursor: pointer; /* Fare imleci */
+        }
+
+        .contact-button:hover {
+            background: #055aab;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #aaa;
+            background-color: #333;
+        }
+
+        /* WhatsApp İkonu (Opsiyonel - FontAwesome gibi kütüphanelerle daha iyi olur) */
+        .whatsapp-icon::before {
+            content: ' W '; /* Basit bir metin ikonu */
+            font-weight: bold;
+            color: #25D366; /* WhatsApp rengi */
+        }
+
+         /* Mobil uyumluluk */
+         @media(max-width: 768px){
+             header h1 {
+                 font-size: 2em;
+             }
+             .features {
+                grid-template-columns: 1fr; /* Mobilde kutular alt alta */
+             }
+         }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Erdem BİLO</h1>
+            <p>Özel Matematik Dersleri</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="resim1.png" alt="Erdem BİLO">
+            <h2>Matematiği Anlamak ve Başarmak İçin Doğru Adrestesiniz!</h2>
+            <p>Kişiye özel ders programları, modern öğretim teknikleri ve online ders imkanı ile matematiği keyifli hale getirelim.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Hakkımda</h2>
+            <p>Merhaba! Ben Erdem BİLO. Yılların verdiği tecrübe ile her seviyeden öğrenciye matematik dersleri veriyorum. Amacım, matematiğin korkulan değil, anlaşılan ve sevilen bir ders olmasını sağlamak. Öğrencilerimin potansiyelini ortaya çıkararak hedeflerine ulaşmalarına yardımcı oluyorum.</p>
+            </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Ders İçeriği ve Seçenekler</h2>
+             <p style="text-align: center;">İster sınavlara hazırlanın, ister okul derslerine destek alın, size özel çözümler sunuyorum.</p>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>Birebir Özel Ders</h3>
+                    <p>Öğrencinin öğrenme hızına ve ihtiyaçlarına göre tamamen kişiselleştirilmiş ders planları.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Online Ders İmkanı</h3>
+                    <p>Konum fark etmeksizin, interaktif online platformlar üzerinden canlı ve verimli dersler.</p>
+                </div>
+                 <div class="feature-box">
+                    <h3>Sınavlara Hazırlık (LGS, YKS vb.)</h3>
+                    <p>Sınav formatına uygun stratejiler, bol soru çözümü ve deneme sınavları ile hedefe yönelik çalışma.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Okul Derslerine Destek</h3>
+                    <p>Müfredata paralel konu anlatımları, ödev yardımı ve eksiklerin giderilmesi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-me">
+        <div class="container">
+            <h2>Neden Erdem BİLO?</h2>
+            <div class="features">
+                <div class="feature-box">
+                    <h3>Kişiye Özel Yaklaşım</h3>
+                    <p>Her öğrencinin farklı olduğunu biliyor, dersleri ona göre şekillendiriyorum.</p>
+                </div>
+                 <div class="feature-box">
+                    <h3>Anlaşılır Anlatım</h3>
+                    <p>Karmaşık konuları bile basit ve akılda kalıcı yöntemlerle anlatıyorum.</p>
+                </div>
+                <div class="feature-box">
+                    <h3>Esnek Program</h3>
+                    <p>Size uygun gün ve saatlerde ders planlaması yapma imkanı.</p>
+                </div>
+                 <div class="feature-box">
+                    <h3>Online Ders Kolaylığı</h3>
+                    <p>Teknolojiyi kullanarak etkileşimli ve verimli online ders deneyimi sunuyorum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>İletişime Geçin ve İlk Adımı Atın!</h2>
+            <p>Dersler hakkında bilgi almak, kayıt olmak veya sorularınızı sormak için aşağıdaki numaradan bana ulaşabilirsiniz. Telefon veya <span class="whatsapp-icon"></span>WhatsApp üzerinden iletişime geçmekten çekinmeyin.</p>
+            <p style="font-size: 1.5em; font-weight: bold;">
+                 [Erdem'in Telefon Numarası]
+            </p>
+            <a href="tel:[Erdem'in Telefon Numarası]" class="contact-button">Hemen Ara</a>
+            <a href="https://wa.me/[UlkekoduOlmadanTelefonNumarasi]" target="_blank" class="contact-button" style="margin-left: 10px; background-color: #25D366;">WhatsApp'tan Yaz</a>
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Erdem BİLO | Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
